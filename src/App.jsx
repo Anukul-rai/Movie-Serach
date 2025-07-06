@@ -1,20 +1,17 @@
-import React from 'react'
-import Home from './pages/Home'
-import {BrowserRouter as Router,Routes, Route} from 'react-router-dom'
-import MovieCard from './components/MovieCard'
-import SearchBar from './components/SearchBar'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import MovieDetails from './pages/MovieDetails'; // assume you'll build this page
+
 function App() {
   return (
-    <div>
-      <Router>
-        <Routes path='/' element={<Home/>}>
-          <Route path='/' element={<SearchBar/>}/>
-          <Route path='/' element={<MovieCard/>}/>
-        </Routes>
-      
-      </Router>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<MovieDetails />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
