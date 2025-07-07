@@ -11,7 +11,7 @@ function Navbar() {
           className="h-14 w-auto border border-white p-1 rounded-md"
         />
         <Link to='/'>
-        <h1 className="absolute left-1/2 transform -translate-x-1/2 text-white font-bold text-2xl text-center">
+        <h1 className="absolute left-1/2 transform -translate-x-1/2 text-white font-bold text-2xl">
           Power Movie Search
         </h1>
         </Link>
