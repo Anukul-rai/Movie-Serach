@@ -2,20 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { fetchApi } from '../services/api';
 import { Link } from 'react-router-dom';
 
-function MovieCard() {
-  const [display, setDisplay] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchApi()
-      setDisplay(data)
-    };
-    fetchData()
-  }, [])
-
+function MovieCard({movies}) {
   return (
     <div className="flex flex-wrap justify-center gap-9 p-4">
-      {display.map((movie, i) => (
+      {movies.map((movie, i) => (
         <Link to={`/movie/${movie.id}`} key={movie.id || i}>
           <div className="w-64 bg-black/40 rounded-lg shadow-md p-3 flex flex-col items-center hover:scale-105 transition duration-300">
             <img
