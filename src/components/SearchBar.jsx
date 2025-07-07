@@ -6,7 +6,7 @@ import MovieCard from '../components/MovieCard'
 function SearchBar({search , setSearch, onSearch}) {
   return (
     <div className=" flex items-start justify-center">
-      <div className="flex my-6">
+      <div className="flex mt-28 mb-4">
         <input 
           type="text" 
           placeholder="Enter Movie Name..."
