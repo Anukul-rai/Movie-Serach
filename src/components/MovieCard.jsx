@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { fetchApi } from '../services/api'
 
 function MovieCard() {
+  const[display,setDisplay]=useState([])
+
+  useEffect(()=>{
+    fetchApi()
+  },[])
   return (
     <div className='flex flex-col items-center justify-center'>
       <div className='border mt-5 px-2'>
