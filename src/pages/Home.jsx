@@ -5,7 +5,7 @@ import MovieCard from '../components/MovieCard'
 
 function Home() {
     return (
-        <div className='bg-[#Bfc0c0] min-h-screen'>
+        <div className='bg-gradient-to-br from-cyan-900 to-yellow-600 min-h-screen'>
         <SearchBar/>
         <MovieCard/>
         </div>

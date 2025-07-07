@@ -26,7 +26,7 @@ function MovieDetails() {
   if (!detail) return <p className="text-center text-3xl font-bold mt-20 text-black">Loading...</p>;
 
   return (
-    <div className="flex flex-col md:flex-row p-6 gap-6 items-center justify-center min-h-screen bg-gradient-to-br from-zinc-900 to-black/40 text-white">
+    <div className="flex flex-col md:flex-row p-6 gap-6 items-center justify-center min-h-screen bg-gradient-to-br from-zinc-900 to-yellow-800 text-white">
       <img
         src={`https://image.tmdb.org/t/p/w500${detail.poster_path}`}
         alt={detail.title}
