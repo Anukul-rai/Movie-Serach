@@ -1,22 +1,42 @@
-import React, { useEffect, useState } from 'react'
-import { fetchApi } from '../services/api'
+import React, { useEffect, useState } from 'react';
+import { fetchApi } from '../services/api';
+import { Link } from 'react-router-dom';
 
 function MovieCard() {
-  const[display,setDisplay]=useState([])
+  const [display, setDisplay] = useState([]);
 
-  useEffect(()=>{
-    fetchApi()
-  },[])
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchApi()
+      setDisplay(data)
+    };
+    fetchData()
+  }, [])
+
   return (
-    <div className='flex flex-col items-center justify-center'>
-      <div className='border mt-5 px-2'>
-      <img src="/POWER.png" alt="image" className='h-40 m-3 border border-yellow-700' />
-      <h1 className='font-semibold text-xl text-center'>Title of the Movie</h1>
-      <p className=' text-md text-center'>Movie Year</p>
-      </div>
-      
+    <div className="flex flex-wrap justify-center gap-9 p-4">
+      {display.map((movie, i) => (
+        <Link to={`/movie/${movie.id}`} key={movie.id || i}>
+          <div className="w-64 bg-black/40 rounded-lg shadow-md p-3 flex flex-col items-center hover:scale-105 transition duration-300">
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.original_title}
+              className="w-full object-cover rounded border border-white/70 mb-3"
+            />
+            <div className="flex flex-col gap-3 mt-2">
+              <h1 className="font-bold text-xl text-center text-white/80">
+                {movie.title}
+              </h1>
+              <p className="text-sm text-center text-white/60">
+                <span className="text-md font-semibold">Release Date: </span>
+                {movie.release_date}
+              </p>
+            </div>
+          </div>
+        </Link>
+      ))}
     </div>
-  )
+  );
 }
 
-export default MovieCard
+export default MovieCard;

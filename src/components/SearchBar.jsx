@@ -12,7 +12,7 @@ function SearchBar() {
     setSearch('')
   }
   return (
-    <div className='bg-[#Bfc0c0] min-h-screen'>
+    <div className='bg-[#Bfc0c0]'>
     <div className=" flex items-start justify-center">
       <div className="flex mt-6">
         <input 
@@ -29,7 +29,6 @@ function SearchBar() {
         </button>
       </div>
     </div>
-          <MovieCard/>
     </div>
 
   );
